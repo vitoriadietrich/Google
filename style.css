@@ -1,0 +1,42 @@
+body {
+    background-color: #f8faff; /* Fundo levemente azulado do print */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.loader-container {
+    display: flex;
+    gap: 15px; /* Espaço entre as bolinhas */
+}
+
+.dot {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    animation: jump 1.2s ease-in-out infinite;
+}
+
+/* Cores exatas do Google */
+.blue   { background-color: #4285F4; }
+.red    { background-color: #EA4335; }
+.yellow { background-color: #FBBC05; }
+.green  { background-color: #34A853; }
+
+/* Atrasos para criar o efeito de onda */
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.15s; }
+.dot:nth-child(3) { animation-delay: 0.3s; }
+.dot:nth-child(4) { animation-delay: 0.45s; }
+
+/* Animação de subir e descer */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px); /* Altura do pulo */
+    }
+}
